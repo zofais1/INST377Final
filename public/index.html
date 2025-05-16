@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyrule Compendium Explorer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Swiper.js for image slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="active">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/compendium.html">Compendium</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to the Hyrule Compendium Explorer</h1>
+            <p>Discover the vast world of Hyrule through our interactive compendium</p>
+        </section>
+
+        <section class="featured-items">
+            <h2>Featured Items</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper" id="featured-slider">
+                    <!-- Items will be loaded dynamically -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <section class="statistics">
+            <h2>Compendium Statistics</h2>
+            <canvas id="compendiumChart"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hyrule Compendium Explorer</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

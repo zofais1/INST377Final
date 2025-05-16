@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyrule Compendium Explorer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="/" class="logo">Hyrule Compendium</a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/compendium.html" class="active">Compendium</a></li>
+                    <li><a href="/favorites.html">Favorites</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="compendium-section">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search compendium...">
+            </div>
+            
+            <div id="compendium-grid" class="compendium-grid">
+                <!-- Items will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hyrule Compendium Explorer. All rights reserved.</p>
+    </footer>
+
+    <script src="js/compendium.js"></script>
+</body>
+</html> 
