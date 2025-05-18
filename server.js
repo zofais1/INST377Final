@@ -8,12 +8,10 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-// Supabase client initialization
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 
@@ -27,7 +25,6 @@ console.log('Supabase Key exists:', !!supabaseKey);
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Hyrule Compendium API endpoints
 app.get('/api/compendium', async (req, res) => {
     const { data: cachedData } = await supabase
         .from('compendium_cache')
@@ -78,7 +75,6 @@ app.get('/api/compendium/:id', async (req, res) => {
     });
 });
 
-// User favorites endpoints
 app.post('/api/favorites', async (req, res) => {
     const { user_id, entry_id } = req.body;
     const { data } = await supabase
@@ -95,7 +91,6 @@ app.get('/api/favorites/:user_id', async (req, res) => {
     res.json(data);
 });
 
-// Comments endpoints
 app.post('/api/comments', async (req, res) => {
     const { user_id, entry_id, comment } = req.body;
     const { data } = await supabase
@@ -104,7 +99,6 @@ app.post('/api/comments', async (req, res) => {
     res.json(data);
 });
 
-// Ratings endpoints
 app.post('/api/ratings', async (req, res) => {
     const { user_id, entry_id, rating } = req.body;
     const { data } = await supabase
@@ -113,7 +107,6 @@ app.post('/api/ratings', async (req, res) => {
     res.json(data);
 });
 
-// Start server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
     console.log(`API available at http://localhost:${port}/api/compendium`);
