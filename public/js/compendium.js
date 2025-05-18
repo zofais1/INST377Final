@@ -1,6 +1,5 @@
 let allItems = [];
 
-// Load compendium items
 async function loadCompendiumItems() {
     const response = await fetch('/api/compendium');
     const responseData = await response.json();
@@ -9,7 +8,6 @@ async function loadCompendiumItems() {
     displayItems(items);
 }
 
-// Display items in the grid
 function displayItems(items) {
     const grid = document.getElementById('compendium-grid');
     grid.innerHTML = '';
@@ -29,7 +27,6 @@ function displayItems(items) {
     });
 }
 
-// Filter items based on search input
 function filterItems() {
     const searchInput = document.getElementById('search-input');
     const searchTerm = searchInput.value.toLowerCase();
@@ -41,7 +38,6 @@ function filterItems() {
     displayItems(filteredItems);
 }
 
-// Show item details
 async function showDetails(id) {
     const response = await fetch(`/api/compendium/${id}`);
     const data = await response.json();
@@ -87,7 +83,6 @@ async function showDetails(id) {
     };
 }
 
-// Add comment
 async function addComment(event, itemId) {
     event.preventDefault();
     const form = event.target;
@@ -110,11 +105,9 @@ async function addComment(event, itemId) {
     textarea.value = '';
 }
 
-// Initialize page
 document.addEventListener('DOMContentLoaded', () => {
     loadCompendiumItems();
     
-    // Add search input event listener
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
         searchInput.addEventListener('input', filterItems);
