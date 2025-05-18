@@ -1,4 +1,3 @@
-// Initialize Swiper
 const swiper = new Swiper('.swiper', {
     loop: true,
     pagination: {
@@ -14,7 +13,6 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-// Show error message to user
 function showError(message) {
     const errorDiv = document.createElement('div');
     errorDiv.className = 'error-message';
@@ -23,7 +21,6 @@ function showError(message) {
     setTimeout(() => errorDiv.remove(), 5000);
 }
 
-// Fetch and display featured items
 async function loadFeaturedItems() {
     const response = await fetch('/api/compendium');
     const responseData = await response.json();
@@ -52,7 +49,6 @@ async function loadFeaturedItems() {
     swiper.update();
 }
 
-// Create statistics chart
 async function createStatisticsChart() {
     const response = await fetch('/api/compendium');
     const responseData = await response.json();
@@ -100,7 +96,6 @@ async function createStatisticsChart() {
     });
 }
 
-// Initialize page
 document.addEventListener('DOMContentLoaded', () => {
     loadFeaturedItems();
     createStatisticsChart();
